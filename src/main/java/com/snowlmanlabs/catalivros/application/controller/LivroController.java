@@ -59,8 +59,8 @@ public class LivroController {
     }
 
     @PostMapping("/{id}/alugar")
-    public ResponseEntity<Void> alugarLivro(@PathVariable Long id, @Valid @RequestBody Usuario usuario) {
-        aluguelService.alugarLivro(id, usuario);
+    public ResponseEntity<Void> alugarLivro(@PathVariable Long id) {
+        aluguelService.alugarLivro(id);
         return ResponseEntity.ok().build();
     }
 }

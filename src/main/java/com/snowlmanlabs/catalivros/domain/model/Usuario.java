@@ -6,12 +6,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class Usuario {
 
     @Id
@@ -21,10 +18,19 @@ public class Usuario {
     private String email;
     @NotBlank private String nome;
 
+
+
+    public Usuario() {
+    }
+
+    public Usuario(Long id, String email, String nome) {
+        this.id = id;
+        this.email = email;
+        this.nome = nome;
+    }
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
