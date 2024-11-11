@@ -5,10 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
-import lombok.NoArgsConstructor;
 
 @Entity
-@NoArgsConstructor
 public class Livro {
 
     @Id
@@ -22,6 +20,9 @@ public class Livro {
     private String autor;
 
     private boolean disponivel = true;
+
+    public Livro() {
+    }
 
     public Livro(String titulo, String autor, boolean disponivel) {
         this.titulo = titulo;
